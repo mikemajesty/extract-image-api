@@ -7,7 +7,7 @@
   "description": "App to extract image of market places",
   "main": "server.js",
   "scripts": {
-    "start": "node dist/server",
+    "start": "gulp",
     "postinstall": "gulp"
   },
   "author": "Mike Lima <mikee_2008@hotmail.com>",
