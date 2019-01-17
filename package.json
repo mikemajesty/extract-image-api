@@ -7,13 +7,19 @@
   "description": "App to extract image of market places",
   "main": "server.js",
   "scripts": {
-    "start": "gulp"
+    "start": "gulp",
+    "postinstall": "gulp"
   },
   "author": "Mike Lima <mikee_2008@hotmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mikemajesty/extract-image-api.git",
+    "url": "https://github.com/mikemajesty/extract-image-api.git"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "babel-preset-es2015-node5": "^1.2.0",
+    "request": "^2.88.0",
     "body-parser": "^1.15.1",
     "cors": "^2.8.4",
     "express": "4.14.0",
@@ -22,6 +28,5 @@
     "gulp-nodemon": "^2.2.1",
     "natives": "^1.1.6",
     "pg": "^7.1.2"
-  },
-  "devDependencies": {}
+  }
 }
