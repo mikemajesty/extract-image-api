@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "gulp",
+    "poststart": "npm prune --production",
     "postinstall": "gulp"
   },
   "author": "Mike Lima <mikee_2008@hotmail.com>",
