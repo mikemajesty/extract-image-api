@@ -1,11 +1,13 @@
 {
   "name": "extract-image-api",
   "version": "1.0.0",
+  "engines": {
+    "node": "8.9.4"
+  },
   "description": "App to extract image of market places",
   "main": "server.js",
   "scripts": {
-    "start": "gulp",
-    "poststart": "npm prune --production",
+    "start": "node dist/server",
     "postinstall": "gulp"
   },
   "author": "Mike Lima <mikee_2008@hotmail.com>",
