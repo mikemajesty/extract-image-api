@@ -1,19 +1,30 @@
 import request from 'request';
 import http from 'http';
 import syncRequest from 'sync-request';
+const download = require('image-downloader')
+import j from '../../../extract-img-product.json'
+
 
 export const extract = (req, res, next) => {
-  const resultOpt = productList.map((p, i) => {
-    const res = syncRequest('GET', `https://comprecomdinheiro.produtos.livelo.com.br/ccstore/v1/products/${p}`);
-    const model = JSON.parse(res.getBody('utf8'));
-    console.log(i);
-    return { id: model.id, image: model.p_largeImageUrl }
+  const p = j.map(data => {
+    const options = {
+      url: data.image,
+      dest: 'C:/Users/mike.rodrigues.lima/Documents/Projects/extract-image-api/images/' + data.id + '.jpg'                  // Save to /path/to/dest/image.jpg
+    }
+
+    return download.image(options)
+      .then(({ filename, image }) => {
+        console.log('File saved to', filename)
+      })
+      .catch((err) => {
+        console.error(err)
+      })
   });
-
   
 
-    res.send(resultOpt);
-  
+  return Promise.all(p).then(() => {
+    res.send(resultOpt)
+  });
 };
 
 const productList = [
